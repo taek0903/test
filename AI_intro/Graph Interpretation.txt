@@ -1,0 +1,12 @@
+# Huber_delta_effect 해석
+Huber Loss는 delta를 기준으로 작은 오차는 MSE 큰 오차는 MAE로 처리한다.
+delta가 작을수록 MAE 구간이 빨리 시작되어 이상치에 강해지고
+delta가 클수록 MSE와 유사해진다.
+일반적으로 delta=1은 학습 안정성과 이상치 대응 사이의 균형이 좋아 자주 사용된다.
+
+# part1_regression_loss_comparison 해석
+본 실험에서 MSE는 이상치에 민감하여 오차 분포의 꼬리가 길게 나타났고
+MAE는 이상치에 강인하여 Test MAE 기준 성능이 가장 우수하였다.
+Huber Loss는 delta를 기준으로 MSE와 MAE의 특성을 절충하여
+오차 분포의 극단값을 완화하는 안정적인 예측 특성을 보였다.
+그러나 본 데이터에서는 MAE가 평가 지표 기준 가장 우수한 성능을 보였다.
